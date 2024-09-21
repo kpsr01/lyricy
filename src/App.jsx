@@ -4,10 +4,15 @@ import './App.css'
 
 function App() {
   const [input,setinput]=useState('');
+  const [display,setdisplay]=useState(false);
+  const [artistname,setartistname]=useState('');
+  const [songname,setsongname]=useState('');
+  const [albumart,setalbumart]=useState('');
   const searchfunc =(e)=>
   {
     e.preventDefault();
-    apicall(input);
+    apicall(input,setartistname,setsongname,setalbumart);
+    setdisplay(true);
   }
   return (
     <div className='conatiner'>
@@ -17,6 +22,7 @@ function App() {
           <button>Submit</button>
         </form>
       </div>
+      {display && (<div className="output-tag"> <div className="outputitems">{songname} <br /> {artistname} <br /> <img src={albumart} alt="" /></div> </div>)}
     </div>
   )
 }
