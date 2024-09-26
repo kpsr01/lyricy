@@ -1,30 +1,62 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import apicall from './api';
-import './App.css'
+import './App.css';
+import { HashLoader } from 'react-spinners';
 
 function App() {
-  const [input,setinput]=useState('');
-  const [display,setdisplay]=useState(false);
-  const [artistname,setartistname]=useState('');
-  const [songname,setsongname]=useState('');
-  const [albumart,setalbumart]=useState('');
-  const searchfunc =(e)=>
-  {
+  const [input, setInput] = useState('');
+  const [display, setDisplay] = useState(false);
+  const [artistName, setArtistName] = useState('');
+  const [songName, setSongName] = useState('');
+  const [albumArt, setAlbumArt] = useState('');
+  const [loader,setLoader]=useState(false);
+
+  const searchFunc = async (e) => {
     e.preventDefault();
-    apicall(input,setartistname,setsongname,setalbumart);
-    setdisplay(true);
-  }
+    setLoader(true);
+    await apicall(input, setArtistName, setSongName, setAlbumArt);
+    setLoader(false);
+    setDisplay(true);
+  };
+
   return (
-    <div className='conatiner'>
-      <div className="input-tag">
-        <form onSubmit={searchfunc} className='input-form'>
-          <input type="text" onChange={(e)=>setinput(e.target.value)} placeholder='Enter Lyrics Here'/>
-          <button>Submit</button>
+    <div className="container">
+      <header className="header">
+        <h1>🎵 Lyricy</h1>
+        <p>Find your favorite songs by entering a few lines of lyrics!</p>
+      </header>
+      <div className="input-section">
+        <form onSubmit={searchFunc} className="input-form">
+          <input
+            type="text"
+            onChange={(e) => setInput(e.target.value)}
+            placeholder="Enter Lyrics Here"
+            className="input-box"
+          />
+          <button className="submit-button">Find Song</button>
         </form>
       </div>
-      {display && (<div className="output-tag"> <div className="outputitems">{songname} <br /> {artistname} <br /> <img src={albumart} alt="" /></div> </div>)}
+      {!loader&&display && (
+        <div className="output-section">
+          <div className="output-card">
+            <img src={albumArt} alt="Album Art" className="album-art" />
+            <div className="song-details">
+              <h2 className="song-title">{songName}</h2>
+              <h3 className="artist-name">{artistName}</h3>
+            </div>
+          </div>
+        </div>
+      )}
+      {loader && <div className="loader-container">
+        <div className="loader">
+          <HashLoader
+            color="#E91E63"
+            size={100}
+          />
+        </div>
+      </div>}
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
