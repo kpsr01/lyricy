@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# Lyricy 🎵
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Lyricy** is a web application that allows users to discover their favorite songs by entering a few lines of lyrics. Leveraging the Spotify API, Lyricy provides an intuitive interface for music lovers to find song details quickly and easily.
 
-## Available Scripts
+## Live Demo
 
-In the project directory, you can run:
+Check out the live version of the application at: [lyricy.vercel.app](https://lyricy.vercel.app)
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Song Search**: Input any lyrics and retrieve song information including song name, artist name, and album art.
+- **Responsive Design**: A mobile-friendly layout that adapts to various screen sizes.
+- **Modern UI**: A clean and elegant design that emphasizes usability and aesthetics.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Stack
 
-### `npm test`
+- **Frontend**: 
+  - React
+  - CSS
+  - React Spinners for loading animation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **APIs**: 
+  - Spotify API for fetching song details
 
-### `npm run build`
+## Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Node.js installed on your machine.
+- A Spotify Developer Account to obtain an API key.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Installation
 
-### `npm run eject`
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/lyricy.git
+   cd lyricy
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Install dependencies:
+   ```bash
+   npm install
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Create a .env file in the root directory and add your Spotify API key:
+   ```env
+   REACT_APP_SPOTIFY_API_KEY=your_api_key_here
+  - To obtain your API key, follow these steps:
+  - Go to the Spotify Developer Dashboard.
+  - Click on "Create an App."
+  - Fill in the required details and click "Create."
+  - After creation, you will see your Client ID and Client Secret. Use them as needed for authentication.
+4. Start the application:
+    ```bash
+    npm start
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+5. Open your web browser and go to http://localhost:3000.
+Enter a line or two of lyrics in the input field and click on "Find Song".
+View the song name, artist name, and album art displayed on the screen.
