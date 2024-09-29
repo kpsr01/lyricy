@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import apicall from './api';
 import './App.css';
 import { HashLoader } from 'react-spinners';
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   const [input, setInput] = useState('');
@@ -55,6 +56,7 @@ function App() {
           />
         </div>
       </div>}
+      <Analytics mode={'production'} />;
     </div>
   );
 }
