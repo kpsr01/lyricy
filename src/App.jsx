@@ -56,7 +56,7 @@ function App() {
           />
         </div>
       </div>}
-      <Analytics mode={'production'} />;
+      <Analytics mode={'production'} />
     </div>
   );
 }
